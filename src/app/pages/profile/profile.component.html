@@ -3,10 +3,10 @@
         <img src="https://hips.hearstapps.com/hmg-prod/images/cute-photos-of-cats-looking-at-camera-1593184780.jpg" alt="Student Avatar">
     </div>
     <div class="profile-info">
-        <h1>Younes Drissi</h1>
+        <h1>{{ (profile$ | async)?.name || 'N/A' }}</h1>
         <p>Date of Birth: June 5, 1997</p>
-        <p *ngIf="!profileUrl">Contact: {{email}}</p>
-        <input *ngIf="profileUrl" matInput placeholder="{{email}}" value="{{email}}">
+        <p *ngIf="!profileUrl">Contact: {{ (profile$ | async)?.email || 'N/A' }}</p>
+        <input *ngIf="profileUrl" matInput [(ngModel)]="email">
         <p>Current License Type : B</p>
         <p>Learner's Permit Information</p>
         <p>Expected License Type : C</p>

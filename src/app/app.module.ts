@@ -14,6 +14,12 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MaterialModulesModule } from './shared/material-modules/material-modules.module';
 import { MapsComponent } from './pages/maps/maps.component';
+import { FormsModule } from '@angular/forms';
+
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
+import { profileReducer } from './store/reducers/profile.reducer';
 
 
 
@@ -34,6 +40,9 @@ import { MapsComponent } from './pages/maps/maps.component';
     GoogleMapsModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    FormsModule,
+    StoreModule.forRoot({ profile: profileReducer }),
+    StoreDevtoolsModule.instrument(),
 
 
     

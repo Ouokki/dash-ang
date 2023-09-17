@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent {
+  selected = null;
 
 }

@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { GoogleMapsModule } from '@angular/google-maps';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -9,6 +13,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MaterialModulesModule } from './shared/material-modules/material-modules.module';
+import { MapsComponent } from './pages/maps/maps.component';
 
 
 
@@ -18,13 +23,17 @@ import { MaterialModulesModule } from './shared/material-modules/material-module
     DashboardComponent,
     ProfileComponent,
     CalendarComponent,
-    PaymentComponent
+    PaymentComponent,
+    MapsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModulesModule
+    MaterialModulesModule,
+    GoogleMapsModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
 
 
     

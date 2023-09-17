@@ -1,0 +1,32 @@
+/* payment-modal.component.css */
+
+/* Style for the payment modal */
+#paymentModal {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    width: 50%;
+  }
+  
+  /* Style for the card input field */
+  #card-element {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style for the CVV input field */
+  #cvv {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for validation errors */
+  #card-errors {
+    color: #dc3545; /* Red color for error messages */
+    margin-top: 10px;
+  }
+  

@@ -1,14 +1,16 @@
-<mat-form-field>
-    <mat-label>Choose a date</mat-label>
-    <input matInput [matDatepicker]="picker">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
+<p *ngIf="(profile$ | async)?.appointementDate=='You didnt\'t book any ...'">Didnt book your appointment ?</p>
+
+<mat-card class="demo-inline-calendar-card" *ngIf="calendar">
+    <mat-calendar [(selected)]="selected"></mat-calendar>
+</mat-card>
+
+
+<p *ngIf="dashboard">Selected date: {{ (profile$ | async)?.appointementDate || 'N/A' }}</p>
 
 <div >
 
-    <p>Pending ...</p>
-    <button mat-raised-button color="primary">Book Now</button>
+
+    <button mat-raised-button color="primary" *ngIf="dashboard" (click)="btnClickCalendar();">Book Now</button>
+    <button mat-raised-button color="primary" *ngIf="calendar" (click)="btnClickCalendarSave();">Save</button>
   
 </div>

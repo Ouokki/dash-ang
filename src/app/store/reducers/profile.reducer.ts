@@ -4,6 +4,7 @@ import * as ProfileActions from '../actions/profile.actions';
 export interface UserProfile {
   name: string;
   email: string;
+  appointementDate : string
   // Add other profile fields as needed
 }
 
@@ -15,6 +16,7 @@ const initialState: ProfileState = {
   profile: {
     name: 'Younes Drissi',
     email: 'younes.drissi@gmail.com',
+    appointementDate : "You didnt't book any ..."
   },
 };
 

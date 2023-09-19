@@ -1,32 +1,110 @@
-/* payment-modal.component.css */
+.credit-card {
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+  position: relative;
+  perspective: 1000px;
+}
 
-/* Style for the payment modal */
-#paymentModal {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    width: 50%;
-  }
-  
-  /* Style for the card input field */
-  #card-element {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  /* Style for the CVV input field */
-  #cvv {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-  }
-  
-  /* Style for validation errors */
-  #card-errors {
-    color: #dc3545; /* Red color for error messages */
-    margin-top: 10px;
-  }
-  
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
+}
+
+.card-front {
+  background-color: #3880ff;
+  color: #fff;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #212121;
+  transform: rotateY(180deg);
+}
+
+.card-type {
+  font-size: 40px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.card-number {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 30px;
+  letter-spacing: 5px;
+}
+
+.card-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cardholder, .exp-date {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.magnetic-stripe {
+  width: 100%;
+  height: 40px;
+  background-color: #888;
+  margin-top: 30px;
+}
+
+.signature {
+  width: 80%;
+  height: 30px;
+  background-color: #888;
+  margin: 20px auto;
+}
+
+.ccv {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.ccv-label {
+  font-size: 16px;
+}
+
+.ccv-number {
+  font-size: 20px;
+  background-color: #fff;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+
+/* Center the form */
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style form elements */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Style radio buttons */
+.mat-radio-button {
+  margin-right: 20px;
+}
+
+/* Center submit button */
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Optional: Add additional styling as per your design preferences */

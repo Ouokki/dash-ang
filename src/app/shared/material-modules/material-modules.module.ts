@@ -8,6 +8,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatCardModule} from '@angular/material/card';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [],
@@ -24,7 +26,10 @@ import {MatCardModule} from '@angular/material/card';
       MatInputModule,
       MatFormFieldModule,
       MatNativeDateModule,
-      MatCardModule
+      MatCardModule,
+      MatRadioModule,
+      MatIconModule,
+      
   ]
 })
 export class MaterialModulesModule { }

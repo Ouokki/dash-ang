@@ -5,6 +5,9 @@ export interface UserProfile {
   name: string;
   email: string;
   appointementDate : string;
+  dateOfBirth : string,
+  licenseType :string,
+  id : string,
   card: PaymentCard;
 }
 
@@ -22,9 +25,12 @@ const cardPayment: PaymentCard = {
 
 const initialState: ProfileState = {
   profile: {
-    name: 'Younes Drissi',
-    email: 'younes.drissi@gmail.com',
-    appointementDate : "You didnt't book any ...",
+    name: '',
+    email: '',
+    appointementDate : "",
+    dateOfBirth : '',
+    licenseType :'',
+    id : '',
     card:cardPayment,
    
   },

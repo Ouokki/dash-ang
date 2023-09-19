@@ -5,9 +5,11 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MapsComponent } from './pages/maps/maps.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'/dashboard' , pathMatch: 'full'},
+  {path: '', redirectTo:'/signup' , pathMatch: 'full'},
+  {path:'signup', component: SignupComponent },
   {path:'dashboard' , component:DashboardComponent},
   {path:'profile' , component:ProfileComponent},
   {path:'calendar' , component:CalendarComponent},

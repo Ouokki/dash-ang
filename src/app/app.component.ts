@@ -12,4 +12,5 @@ export class AppComponent {
   calendar="/calendar";
   payment="/payment";
   geolocation="/geolocation";
+  signOut="/signup";
 }

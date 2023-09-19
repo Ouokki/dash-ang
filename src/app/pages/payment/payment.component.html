@@ -28,31 +28,65 @@
 </div>
 
 <div *ngIf="payment">
-  <mat-form-field>
-    <mat-label>Card Number</mat-label>
-    <input matInput [(ngModel)]="cardnumber" placeholder="Card Number" />
-  </mat-form-field>
-  <br />
-  <mat-form-field>
-    <mat-label>Name on Card</mat-label>
-    <input [(ngModel)]="fullname" matInput placeholder="Name on Card" />
-  </mat-form-field>
-  <br />
-  <mat-form-field>
-    <mat-label>Expiration Date</mat-label>
-    <input matInput placeholder="MM/YY" [(ngModel)]="expiration" />
-  </mat-form-field>
-  <br />
-  <mat-form-field>
-    <mat-label>CVV</mat-label>
-    <input matInput placeholder="CVV" />
-  </mat-form-field>
-  <br />
-  <mat-radio-group [(ngModel)]="selectedCardType">
-    <mat-radio-button value="Visa">Visa</mat-radio-button>
-    <mat-radio-button value="MasterCard">MasterCard</mat-radio-button>
-    <mat-radio-button value="ApplePay">ApplePay</mat-radio-button>
-  </mat-radio-group>
-  <br />
-  <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+    <div class="form-group">
+      <label for="cvv">fullname:</label>
+      <input type="text" id="fullname" formControlName="fullname" class="form-control" />
+    </div>
+    <!-- CVV -->
+    <div class="form-group">
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" formControlName="cvv" class="form-control" />
+      <div *ngIf="form.get('cvv')?.hasError('required') && form.get('cvv')?.touched">
+        CVV is required.
+      </div>
+      <div *ngIf="form.get('cvv')?.hasError('invalidCVV') && form.get('cvv')?.touched">
+        Invalid CVV. Please enter a 3 or 4-digit number.
+      </div>
+    </div>
+  
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email" class="form-control" />
+      <div *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+        Email is required.
+      </div>
+      <div *ngIf="form.get('email')?.hasError('invalidEmail') && form.get('email')?.touched">
+        Invalid email format.
+      </div>
+    </div>
+  
+  
+    <!-- Bank Card Number -->
+    <div class="form-group">
+      <label for="cardnumber">Bank Card Number:</label>
+      <input type="text" id="cardnumber" formControlName="cardnumber" class="form-control" />
+      <div *ngIf="form.get('cardnumber')?.hasError('required') && form.get('cardnumber')?.touched">
+        Bank Card Number is required.
+      </div>
+      <div *ngIf="form.get('cardnumber')?.hasError('invalidCardNumber') && form.get('cardnumber')?.touched">
+        Invalid Bank Card Number. Please enter a 16-digit number.
+      </div>
+    </div>
+  
+    <!-- Expiration Date -->
+    <div class="form-group">
+      <label for="expiration">Expiration Date (MM/YY):</label>
+      <input type="text" id="expirationDate" formControlName="expiration" class="form-control" />
+      <div *ngIf="form.get('expiration')?.hasError('required') && form.get('expirationDate')?.touched">
+        Expiration Date is required.
+      </div>
+      <div *ngIf="form.get('expiration')?.hasError('invalidExpirationDate') && form.get('expiration')?.touched">
+        Invalid Expiration Date format (MM/YY).
+      </div>
+      <div *ngIf="form.get('expiration')?.hasError('expiredCard') && form.get('expiration')?.touched">
+        Card has already expired.
+      </div>
+    </div>
+  
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="form.invalid">Pay</button>
+  </form>
 </div>

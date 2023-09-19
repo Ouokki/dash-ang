@@ -34,8 +34,6 @@ export class ProfileComponent implements OnInit {
 
   };
 
-  btnClickProfile=  () => {
-    this.router.navigateByUrl('/profile');
-  };
+  
   
 }

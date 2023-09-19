@@ -34,8 +34,6 @@ export class CalendarComponent {
 
   btnClickCalendarSave=  () => {
     this.router.navigateByUrl('/payment');
-    console.log(typeof this.selected);
-    console.log(this.selected.toLocaleString().split(',')[0]);
     const profileUpdate: Partial<UserProfile> = {
       appointementDate: this.selected.toLocaleString().split(',')[0],
     };

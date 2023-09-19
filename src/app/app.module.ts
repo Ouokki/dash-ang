@@ -13,12 +13,14 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { MaterialModulesModule } from './shared/material-modules/material-modules.module';
 import { MapsComponent } from './pages/maps/maps.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { profileReducer } from './store/reducers/profile.reducer';
+import { LoginComponent } from './pages/login/login.component';
+import { SignupComponent } from './pages/signup/signup.component';
 
 
 
@@ -29,7 +31,9 @@ import { profileReducer } from './store/reducers/profile.reducer';
     ProfileComponent,
     CalendarComponent,
     PaymentComponent,
-    MapsComponent
+    MapsComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +44,7 @@ import { profileReducer } from './store/reducers/profile.reducer';
     HttpClientModule,
     HttpClientJsonpModule,
     FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({ profile: profileReducer }),
     StoreDevtoolsModule.instrument(),
 

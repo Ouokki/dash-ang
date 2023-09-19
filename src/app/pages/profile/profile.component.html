@@ -4,16 +4,15 @@
     </div>
     <div class="profile-info">
         <h1>{{ (profile$ | async)?.name || 'N/A' }}</h1>
-        <p>Date of Birth: June 5, 1997</p>
+        <p>Date of Birth: {{ (profile$ | async)?.dateOfBirth || 'N/A' }}</p>
         <p *ngIf="!profileUrl">Contact: {{ (profile$ | async)?.email || 'N/A' }}</p>
         <input *ngIf="profileUrl" matInput [(ngModel)]="email">
-        <p>Current License Type : B</p>
-        <p>Learner's Permit Information</p>
-        <p>Expected License Type : C</p>
+        <p>Current License Type : {{ (profile$ | async)?.licenseType || 'N/A' }}</p>
+        <p>ID : {{ (profile$ | async)?.id || 'N/A' }}</p>
+    
     </div>
     
 </div>
-<button mat-raised-button color="primary" *ngIf="dashboard" (click)="btnClickProfile();">Edit</button>
 <button mat-raised-button color="primary" *ngIf="profileUrl" (click)="btnClickDashboard();">Save</button>
 
 

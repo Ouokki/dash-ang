@@ -21,6 +21,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { profileReducer } from './store/reducers/profile.reducer';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
 
 
 
@@ -33,7 +34,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     PaymentComponent,
     MapsComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@ export function emailValidator(): ValidatorFn {
 
 export function cardIdValidator(): ValidatorFn {
   return (control: AbstractControl): { [key: string]: any } | null => {
-    const cardIdPattern = /^[0-9]{6}$/; // Adjust the pattern as needed
+    const cardIdPattern = /^[A-Za-z][0-9]{6}$/; // Adjust the pattern as needed
 
     if (!cardIdPattern.test(control.value)) {
       return { 'invalidCardId': { value: control.value } };
